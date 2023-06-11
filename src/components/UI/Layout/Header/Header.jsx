@@ -7,11 +7,11 @@ const Header = () => {
 
   return (
     <>
-      <div className="header-top">
+      <header className="header-top">
         <h3 style={{ color: "white", marginLeft: "15%", margin: "auto" }}>
           ReactMeals
         </h3>
-        <div className="cart">
+        <button className="cart">
           <BsFillCartPlusFill />
           <div>
             <b>Your Cart</b>
@@ -19,14 +19,12 @@ const Header = () => {
           <div className="itemCount" style={{ color: "violet" }}>
             {totalItems}
           </div>
-        </div>
-      </div>
+        </button>
+      </header>
       <div className="header-image">
         <img
-          src="https://i.ibb.co/Y0BVtXB/meals.jpg"
+          src="https://github.com/academind/react-complete-guide-code/blob/11-practice-food-order-app/code/02-adding-a-header-cmp/src/assets/meals.jpg?raw=true"
           alt=""
-          width="100%"
-          height="100vh"
         />
       </div>
     </>
