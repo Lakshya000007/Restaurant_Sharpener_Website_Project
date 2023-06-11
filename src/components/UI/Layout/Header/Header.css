@@ -1,0 +1,26 @@
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  background-color: brown;
+  min-height: 60px;
+}
+
+.cart {
+  display: flex;
+  margin-right: 10%;
+  background-color: rgb(134, 5, 5);
+  color: white;
+  justify-content: space-around;
+  min-width: 25vh;
+  min-height: 30px;
+  align-items: center;
+  margin: auto;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+img {
+  object-fit: cover;
+}
