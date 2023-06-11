@@ -4,6 +4,7 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 
 const Header = () => {
   const [totalItems, setTotalItems] = useState(0);
+  const [itemList, setItemList] = useState([]);
 
   return (
     <>

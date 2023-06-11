@@ -1,0 +1,19 @@
+.item-center {
+  margin-top: 10vh;
+  background-color: rgba(255, 255, 255, 0.911);
+  width: 70vw;
+  margin-left: 5vw;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#self {
+  margin-right: 75%;
+}
+
+hr {
+  width: 95%;
+  margin: auto;
+}
