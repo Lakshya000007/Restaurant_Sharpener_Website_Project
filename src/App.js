@@ -7,6 +7,7 @@ import Cart from "./components/Header/Cart/Cart";
 import Modal from "./components/Header/Modal/Modal";
 
 function App() {
+  const [showCart, setShowCart] = useState(false);
   const [itemList, setItemList] = useState([
     {
       itemName: "Sushi",
@@ -30,13 +31,17 @@ function App() {
     },
   ]);
 
+  const handleCartShow = () => {
+    setShowCart(!showCart);
+  };
+
   return (
-    <div className="container">
-      <Header />
+    <div className={showCart && "container"}>
+      <Header handleCartShow={handleCartShow} />
       <MealsSummary />
       <MealShow itemList={itemList} />
       <Modal>
-        <Cart />
+        <Cart showCart={showCart} handleCartShow={handleCartShow} />
       </Modal>
     </div>
   );

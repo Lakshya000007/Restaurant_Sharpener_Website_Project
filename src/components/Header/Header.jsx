@@ -2,9 +2,13 @@ import { useState } from "react";
 import "./Header.css";
 import { BsFillCartPlusFill } from "react-icons/bs";
 
-const Header = () => {
+const Header = ({ handleCartShow }) => {
   const [totalItems, setTotalItems] = useState(0);
   const [itemList, setItemList] = useState([]);
+
+  const handleCartShowClick = () => {
+    handleCartShow();
+  };
 
   return (
     <>
@@ -12,7 +16,7 @@ const Header = () => {
         <h3 style={{ color: "white", marginLeft: "15%", margin: "auto" }}>
           ReactMeals
         </h3>
-        <button className="cart">
+        <button className="cart" onClick={handleCartShowClick}>
           <BsFillCartPlusFill />
           <div>
             <b>Your Cart</b>
