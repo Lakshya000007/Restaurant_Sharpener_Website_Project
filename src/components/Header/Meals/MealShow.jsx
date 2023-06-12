@@ -1,6 +1,27 @@
+import { useContext, useState } from "react";
+import { UserContext } from "../../../App";
 import "./MealShow.css";
 
 const MealShow = ({ itemList }) => {
+  const cartList = useContext(UserContext);
+  const [cnt, setCnt] = useState(0);
+
+  console.log(itemList);
+
+  const handleCnt = (cnt, name) => {
+    setCnt(cnt);
+    console.log(cnt);
+  };
+
+  const handleAdd = (cnt, name, cost) => {
+    setCnt(cnt);
+
+    cartList.handleCartList(cnt, name, cost);
+    setCnt(0);
+    console.log(name);
+    console.log(cost);
+  };
+
   return (
     <>
       <center style={{ fontSize: "18px" }}>
@@ -30,12 +51,15 @@ const MealShow = ({ itemList }) => {
                         id="amt"
                         min="1"
                         max="5"
-                        defaultValue="0"
+                        // value={cnt}
                         style={{
                           width: "50px",
                           marginLeft: "10px",
                           marginBottom: "10px",
                         }}
+                        onChange={(e) =>
+                          handleCnt(e.target.value, item.itemName)
+                        }
                       />
                     </div>
                     <div className="add">
@@ -47,6 +71,7 @@ const MealShow = ({ itemList }) => {
                           padding: "2px",
                           marginBottom: "5px",
                         }}
+                        onClick={() => handleAdd(cnt, item.itemName, item.cost)}
                       >
                         + Add
                       </button>

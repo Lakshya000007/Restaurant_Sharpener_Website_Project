@@ -2,10 +2,7 @@ import { useState } from "react";
 import "./Header.css";
 import { BsFillCartPlusFill } from "react-icons/bs";
 
-const Header = ({ handleCartShow }) => {
-  const [totalItems, setTotalItems] = useState(0);
-  const [itemList, setItemList] = useState([]);
-
+const Header = ({ handleCartShow, cartCnt }) => {
   const handleCartShowClick = () => {
     handleCartShow();
   };
@@ -22,7 +19,7 @@ const Header = ({ handleCartShow }) => {
             <b>Your Cart</b>
           </div>
           <div className="itemCount" style={{ color: "violet" }}>
-            {totalItems}
+            {cartCnt}
           </div>
         </button>
       </header>

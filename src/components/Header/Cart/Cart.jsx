@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./Cart.css";
+import { UserContext } from "../../../App";
 
-const Cart = ({ showCart, handleCartShow }) => {
-  const [cartItemList, setCartItemList] = useState([
-    {
-      name: "Sushi",
-    },
-    {
-      name: "Crisp Falero",
-    },
-  ]);
+const Cart = ({ showCart, handleCartShow, totalCost }) => {
+  const cartItemList = useContext(UserContext);
+  // const [cartItemList, setCartItemList] = useState([
+  //   {
+  //     name: "Sushi",
+  //   },
+  //   {
+  //     name: "Crisp Falero",
+  //   },
+  // ]);
 
   const closeCartShow = () => {
     handleCartShow();
@@ -19,11 +21,13 @@ const Cart = ({ showCart, handleCartShow }) => {
     return (
       <>
         <div className="cart-overlay">
-          {cartItemList.map((item) => {
+          {cartItemList.cartList.map((item) => {
             return (
               <>
                 <div>
-                  <small>{item.name}</small>
+                  <small>
+                    {item.name} - {item.count}
+                  </small>
                 </div>
               </>
             );
@@ -31,7 +35,7 @@ const Cart = ({ showCart, handleCartShow }) => {
 
           <div className="cart-amt">
             <b>Total Amount</b>
-            <b>35.62$</b>
+            <b>{Number(totalCost)}$</b>
           </div>
           <div className="order-cancel">
             <button
