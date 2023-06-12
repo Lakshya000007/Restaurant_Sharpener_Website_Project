@@ -3,6 +3,8 @@ import Header from "./components/Header/Header.jsx";
 import MealsSummary from "./components/Header/Meals/MealSummary.jsx";
 import MealShow from "./components/Header/Meals/MealShow.jsx";
 import { useState } from "react";
+import Cart from "./components/Header/Cart/Cart";
+import Modal from "./components/Header/Modal/Modal";
 
 function App() {
   const [itemList, setItemList] = useState([
@@ -29,10 +31,13 @@ function App() {
   ]);
 
   return (
-    <div>
+    <div className="container">
       <Header />
       <MealsSummary />
       <MealShow itemList={itemList} />
+      <Modal>
+        <Cart />
+      </Modal>
     </div>
   );
 }

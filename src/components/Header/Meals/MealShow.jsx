@@ -28,6 +28,9 @@ const MealShow = ({ itemList }) => {
                       <input
                         type="number"
                         id="amt"
+                        min="1"
+                        max="5"
+                        defaultValue="0"
                         style={{
                           width: "50px",
                           marginLeft: "10px",
